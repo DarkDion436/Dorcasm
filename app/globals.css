@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+/* =========================================
+   THEME VARIABLES
+========================================= */
+
+:root {
+  --background: #faf8f4;
+  --foreground: #171717;
+
+  --card: #f5f1ea;
+  --accent: #bca58a;
+  --border: #e6dfd5;
+
+  --muted: #6f6f6f;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Luxury spacing scale */
+  --footer-spacing-tight: 0.5rem;
+  --footer-spacing-heading: 2rem;
+}
+
+@layer components {
+  /* Standardized Luxury Label with Gold Accent */
+  .atelier-label {
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+  
+  .atelier-label .label-main {
+    @apply uppercase tracking-[0.45em] text-[10px] md:text-xs text-neutral-500 font-medium;
+  }
+
+  .atelier-label .label-sub {
+    @apply font-serif text-[10px] tracking-[0.8em] uppercase text-[#c5a059] mt-3 border-t border-[#c5a059]/30 pt-2;
+  }
+
+  .footer-heading {
+    @apply text-[10px] uppercase font-medium text-neutral-900;
+    letter-spacing: 0.35em;
+    margin-bottom: var(--footer-spacing-heading);
+  }
+
+  .footer-links-gap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--footer-spacing-tight);
+  }
+
+  .footer-interactive {
+    @apply transition-all duration-500 ease-out;
+  }
+}
+
+/* =========================================
+   TAILWIND THEME
+========================================= */
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* =========================================
+   GLOBALS
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.font-serif {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.heading-xl {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  font-weight: 500;
+}
+
+.heading-lg {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.body-text {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn-primary {
+  display: inline-block;
+  background: #121212;
+  color: #ffffff;
+  border: 1px solid #121212;
+  padding: 1rem 2.5rem;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: #c5a059;
+  border-color: #c5a059;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: #ffffff;
+  color: #121212;
+  border: 1px solid #121212;
+  padding: 1rem 2.5rem;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-secondary:hover {
+  border-color: #c5a059;
+  color: #c5a059;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container-custom {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-inline: 4rem;
+  }
+}
+
+/* =========================================
+   IMAGE HOVER EFFECT
+========================================= */
+
+.image-zoom {
+  overflow: hidden;
+}
+
+.image-zoom img {
+  transition: transform 0.7s ease;
+}
+
+.image-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1ece4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bca58a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9d8467;
+}
