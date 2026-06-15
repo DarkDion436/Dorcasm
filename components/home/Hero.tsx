@@ -14,15 +14,15 @@ export default function Hero() {
               <p className="label-main">
                 KENDI <span className="text-[#c5a059]">DORCAS</span>
               </p>
-              <p className="label-sub">ATELIER</p>
+              <p className="label-sub">STUDIO</p>
             </div>
 
             <h1 className="heading-xl text-neutral-900 mb-8">
               Engineered
               <br />
-              <span className="italic font-light">Expression</span>
+              <span className="italic font-light">Garments for</span>
               <br />
-              Made to Last
+              the Modern Soul.
             </h1>
 
             <p className="body-text max-w-xl text-lg md:text-xl mb-12">

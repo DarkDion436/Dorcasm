@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+// Import the image statically to verify the path and get automatic optimization
+import aboutImage from "@/images/about/about.jpg";
 
 export default function AboutPreview() {
   return (
@@ -13,15 +15,11 @@ export default function AboutPreview() {
             <div className="relative h-[500px] md:h-[650px] lg:h-[750px]">
 
               <Image
-                src="/images/about/about.jpg"
+                src={aboutImage}
                 alt="Kendi Dorcas Studio"
                 fill
-                className="
-                  object-cover
-                  transition-transform
-                  duration-700
-                  hover:scale-105
-                "
+                placeholder="blur"
+                className="object-cover transition-transform duration-700 hover:scale-105"
               />
 
             </div>
@@ -161,15 +159,16 @@ export default function AboutPreview() {
                   inline-flex
                   items-center
                   justify-center
-                  min-w-[220px]
-                  px-10
-                  py-5
+                  max-w-[240px]
+                  px-8
+                  py-8
                   border
                   border-black
                   text-black
                   uppercase
                   tracking-[0.25em]
-                  text-xs
+                  text-3xs
+                  gap-5
                   transition-all
                   duration-300
                   hover:bg-black
