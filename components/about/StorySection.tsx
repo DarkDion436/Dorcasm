@@ -56,7 +56,7 @@ export default function StorySection() {
             <div className="mt-10 space-y-6 text-neutral-600 leading-relaxed text-lg">
 
               <p>
-                Kendi Dorcas Studio was founded from a passion
+                Kiki the Seamstress was founded from a passion
                 for creating timeless garments that celebrate
                 individuality, confidence, and elegance.
               </p>

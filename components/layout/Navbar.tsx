@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Collections", href: "/collections" },
+  
   { name: "Portfolio", href: "/portfolio" },
   { name: "Custom Orders", href: "/custom-orders" },
   { name: "Contact", href: "/contact" },
@@ -43,12 +43,12 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="group">
               <h1 className="font-serif text-3xl tracking-widest text-foreground flex items-center">
-                K<span className="text-gold">D</span>
+                K<span className="text-gold">tS</span>
               </h1>
 
               <p className="font-serif text-[10px] tracking-[0.4em] uppercase text-muted -mt-1">
-                KENDI DORCAS{" "}
-                <span className="text-gold/70">STUDIO</span>
+                Kiki the{" "}
+                <span className="text-gold/70">Seamstress</span>
               </p>
             </Link>
 

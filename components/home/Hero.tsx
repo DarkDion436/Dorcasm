@@ -12,9 +12,9 @@ export default function Hero() {
             {/* Studio Label */}
             <div className="atelier-label px-6 md:mb-0.5 lg:mb-2">
               <p className="label-main">
-                KENDI <span className="text-[#c5a059]">DORCAS</span>
+                K<span className="text-[#c5a059]">tS</span>
               </p>
-              <p className="label-sub">STUDIO</p>
+              <p className="label-sub">Kiki the Seamstress</p>
             </div>
 
             <h1 className="heading-xl text-neutral-900 mb-2">
@@ -30,7 +30,7 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-10">
-              <Link href="/collections" className="btn-primary min-w-[240px] text-center">
+              <Link href="/portfolio" className="btn-primary min-w-[240px] text-center">
                 View Collection
               </Link>
 

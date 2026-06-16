@@ -16,7 +16,7 @@ export default function AboutPreview() {
 
               <Image
                 src={aboutImage}
-                alt="Kendi Dorcas Studio"
+                alt="Kiki the Seamstress"
                 fill
                 placeholder="blur"
                 className="object-cover transition-transform duration-700 hover:scale-105"
@@ -68,7 +68,7 @@ export default function AboutPreview() {
                   text-lg
                 "
               >
-                Kendi Dorcas Studio is a contemporary fashion
+                Kiki the Seamstress is a contemporary fashion
                 atelier dedicated to creating timeless garments
                 rooted in craftsmanship, sustainability, and
                 intentional design.

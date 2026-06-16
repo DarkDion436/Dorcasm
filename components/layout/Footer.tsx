@@ -12,10 +12,10 @@ export default function Footer() {
           <div>
             <div className="inline-block ">
               <p className="font-serif text-3xl tracking-[0.15em] uppercase text-foreground">
-                KENDI <span className="text-gold">DORCAS</span>
+                K<span className="text-gold">tS</span>
               </p>
               <p className="font-serif text-[10px] tracking-[0.5em] uppercase text-gold mt-2 border-t border-gold/30 pt-2">
-                STUDIO
+                Kiki the Seamstress
               </p>
             </div>
 
@@ -82,11 +82,11 @@ export default function Footer() {
             </h3>
 
             <div className="footer-links-gap text-sm text-muted font-light">
-              <p>Nairobi, Kenya</p>
+              <p>Diani, Kenya</p>
 
-              <p>+254 700 000 000</p>
+              <p>+254 746 319 099</p>
 
-              <p className="break-all">hello@kendidorcasstudio.com</p>
+              <p className="break-all">hello@kikitheseamstress.com</p>
             </div>
 
             <div className="flex gap-6 mt-10">
@@ -123,7 +123,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
 
             <p className="text-[10px] uppercase tracking-[0.25em] text-neutral-400">
-              © {new Date().getFullYear()} Kendi Dorcas Studio
+              © {new Date().getFullYear()} Kiki the Seamstress. All rights reserved.
             </p>
 
             <div className="flex gap-12 text-[10px] uppercase tracking-[0.25em] text-neutral-400">
