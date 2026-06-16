@@ -167,8 +167,7 @@ export default function AboutPreview() {
                   text-black
                   uppercase
                   tracking-[0.25em]
-                  text-3xs
-                  gap-5
+                  text-xs
                   transition-all
                   duration-300
                   hover:bg-black

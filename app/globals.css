@@ -11,24 +11,85 @@
   --card: #f5f1ea;
   --accent: #bca58a;
   --border: #e6dfd5;
-
   --muted: #6f6f6f;
+  --gold: #c5a059;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: "Cormorant Garamond", serif;
 
   /* Luxury spacing scale */
   --footer-spacing-tight: 0.5rem;
   --footer-spacing-heading: 2rem;
 }
 
+/* =========================================
+   TAILWIND THEME
+========================================= */
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-serif);
+}
+
+/* =========================================
+   BASE STYLES
+========================================= */
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Scrollbar - Base styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1ece4;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #bca58a;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9d8467;
+  }
+}
+
+/* =========================================
+   COMPONENT CLASSES
+========================================= */
+
 @layer components {
   /* Standardized Luxury Label with Gold Accent */
   .atelier-label {
     display: inline-block;
-    margin-top: 1.5rem;
-    margin-left: 2.5rem;
-    margin-bottom: 2rem;
+    @apply mt-6 ml-10 mb-8;
   }
   
   .atelier-label .label-main {
@@ -36,7 +97,7 @@
   }
 
   .atelier-label .label-sub {
-    @apply font-serif text-[10px] tracking-[0.8em] uppercase text-[#c5a059] mt-3 border-t border-[#c5a059]/30 pt-2;
+    @apply font-serif text-[10px] tracking-[0.8em] uppercase text-gold mt-3 border-t border-gold/30 pt-2;
   }
 
   .footer-heading {
@@ -54,178 +115,74 @@
   .footer-interactive {
     @apply transition-all duration-500 ease-out;
   }
-}
 
-/* =========================================
-   TAILWIND THEME
-========================================= */
-
-@theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  --color-card: var(--card);
-  --color-accent: var(--accent);
-  --color-border: var(--border);
-  --color-muted: var(--muted);
-
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-/* =========================================
-   GLOBALS
-========================================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  overflow-x: hidden;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* =========================================
-   TYPOGRAPHY
-========================================= */
-
-.font-serif {
-  font-family: "Cormorant Garamond", serif;
-}
-
-.heading-xl {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2rem, 6vw, 4rem);
-  margin-left: 2rem;
-  margin-top: 1rem;
-  line-height: 0.95;
-  font-weight: 500;
-}
-
-.heading-lg {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1;
-}
-
-.section-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1.1;
-}
-
-.body-text {
-  color: var(--muted);
-  line-height: 1.8;
-  font-family: var(--font-sans);
-  margin:0 0 2rem 2rem;
-  
-}
-
-/* =========================================
-   BUTTONS
-========================================= */
-
-.btn-primary {
-  display: inline-block;
-  background: #121212;
-  color: #ffffff;
-  border: 1px solid #121212;
-  margin: 0 2.5rem;
-  padding: 1rem 1.5rem;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-weight: 500;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.btn-primary:hover {
-  background: transparent;
-  color: #c5a059;
-  border-color: #c5a059;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  display: inline-block;
-  background: #ffffff;
-  color: #121212;
-  border: 1px solid #121212;
-  padding: 1rem 2.5rem;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-weight: 500;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.btn-secondary:hover {
-  border-color: #c5a059;
-  color: #c5a059;
-  transform: translateY(-2px);
-}
-
-/* =========================================
-   CONTAINER
-========================================= */
-
-.container-custom {
-  width: 100%;
-  max-width: 1440px;
-  margin-inline: auto;
-  padding-inline: 1.5rem;
-}
-
-@media (min-width: 1024px) {
-  .container-custom {
-    padding-inline: 4rem;
+  /* TYPOGRAPHY */
+  .font-serif {
+    font-family: var(--font-serif);
   }
-}
 
-/* =========================================
-   IMAGE HOVER EFFECT
-========================================= */
+  .heading-xl {
+    @apply font-serif font-medium mt-4 ml-8;
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 0.95;
+  }
 
-.image-zoom {
-  overflow: hidden;
-}
+  .heading-lg {
+    @apply font-serif font-medium mt-4 ml-8;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1;
+  }
 
-.image-zoom img {
-  transition: transform 0.7s ease;
-}
+  .section-title {
+    @apply font-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+  }
 
-.image-zoom:hover img {
-  transform: scale(1.05);
-}
+  .body-text {
+    @apply text-muted mb-8 ml-8 text-left;
+    line-height: 1.8;
+    font-family: var(--font-sans);
+  }
 
-/* =========================================
-   SCROLLBAR
-========================================= */
+  /* BUTTONS */
+  .btn-primary {
+    @apply inline-block bg-[#121212] text-white border border-[#121212] font-medium uppercase mx-10 py-4 px-6;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
+  .btn-primary:hover {
+    @apply bg-transparent text-gold border-gold -translate-y-[2px];
+  }
 
-::-webkit-scrollbar-track {
-  background: #f1ece4;
-}
+  .btn-secondary {
+    @apply inline-block bg-white text-[#121212] border border-[#121212] font-medium uppercase py-4 px-10;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #bca58a;
-}
+  .btn-secondary:hover {
+    @apply border-gold text-gold -translate-y-[2px];
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #9d8467;
+  /* CONTAINER */
+  .container-custom {
+    @apply w-full max-w-[1440px] mx-auto px-6 lg:px-16;
+  }
+
+  /* IMAGE HOVER EFFECT */
+  .image-zoom {
+    @apply overflow-hidden;
+  }
+
+  .image-zoom img {
+    @apply transition-transform duration-700 ease-in-out;
+  }
+
+  .image-zoom:hover img {
+    @apply scale-105;
+  }
 }

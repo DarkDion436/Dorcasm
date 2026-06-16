@@ -10,22 +10,21 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="max-w-4xl md:ml-12 lg:ml-24">
             {/* Studio Label */}
-            <div className="atelier-label md:mb-16">
+            <div className="atelier-label px-6 md:mb-0.5 lg:mb-2">
               <p className="label-main">
                 KENDI <span className="text-[#c5a059]">DORCAS</span>
               </p>
               <p className="label-sub">STUDIO</p>
             </div>
 
-            <h1 className="heading-xl text-neutral-900 mb-8">
+            <h1 className="heading-xl text-neutral-900 mb-2">
               Engineered
               <br />
               <span className="italic font-light">Garments for</span>
               <br />
               the Modern Soul.
             </h1>
-
-            <p className="body-text max-w-xl text-lg md:text-xl mb-12">
+            <p className="body-text max-w-xl text-lg md:text-xl mb-8">
               Sustainable fashion crafted with architectural precision,
               intentional design, and timeless elegance for the modern soul.
             </p>

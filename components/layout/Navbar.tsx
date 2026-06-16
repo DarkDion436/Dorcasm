@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-5 right-5 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-100">
+      <header className="fixed top-0 left-5 right-5 z-50 bg-white/90 backdrop-blur-md border-b border-[#c5a059]/150">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between h-20 ">
 

@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-neutral-200 mt-32 pt-12">
+        <div className="border-t border-neutral-200 mt-12 pt-8">
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
 

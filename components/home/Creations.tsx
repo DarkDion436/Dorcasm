@@ -1,36 +1,40 @@
 import Image from "next/image";
 import Link from "next/link";
+import tailoringImage from "@/images/collections/tailoring1.jpg";
+import bridalImage from "@/images/collections/bridal.jpg";
+import resortImage from "@/images/collections/resort.jpg";
+import corporateImage from "@/images/collections/corporate.jpg";
 
-const creations = [
+const collections = [
   {
     title: "Custom Tailoring",
-    image: "/images/collections/tailoring.jpg",
+    image: tailoringImage,
   },
   {
     title: "Bridal Collection",
-    image: "/images/collections/bridal.jpg",
+    image: bridalImage,
   },
   {
     title: "Resort Wear",
-    image: "/images/collections/resort.jpg",
+    image: resortImage,
   },
   {
     title: "Corporate Elegance",
-    image: "/images/collections/corporate.jpg",
+    image: corporateImage,
   },
 ];
 
-export default function Creations() {
+export default function Collections() {
   return (
     <section className="bg-[#faf8f4] py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl px-6 lg:px-12">
 
         {/* Section Header */}
 
-        <div className="max-w-4xl mb-24">
-          <div className="atelier-label">
+        <div className="max-w-4xl mb-24 ">
+          <div className="atelier-label mx-auto mb-12 ">
             <p className="label-main">Our Portfolio</p>
-            <p className="label-sub">Creations</p>
+            <p className="label-sub">Collections</p>
           </div>
 
           <h2 className="heading-lg text-neutral-900">
@@ -51,7 +55,7 @@ export default function Creations() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-          {creations.map((item) => (
+          {collections.map((item) => (
             <Link
               href="/collections"
               key={item.title}
