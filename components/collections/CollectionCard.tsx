@@ -49,9 +49,9 @@ export default function CollectionCard({
           <span
             className="
               uppercase
-              tracking-[0.3em]
+              tracking-[0.35em]
               text-xs
-              text-neutral-500
+              text-muted
             "
           >
             {category}
@@ -62,6 +62,7 @@ export default function CollectionCard({
               mt-3
               font-serif
               text-3xl
+              leading-tight
               md:text-4xl
             "
           >
@@ -73,7 +74,7 @@ export default function CollectionCard({
               mt-6
               w-0
               h-px
-              bg-black
+              bg-foreground
               transition-all
               duration-500
               group-hover:w-full

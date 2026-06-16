@@ -5,6 +5,8 @@ import resortImage from "@/images/collections/resort.jpg";
 import corporateImage from "@/images/collections/corporate.jpg";
 import tailoringImage from "@/images/collections/tailoring1.jpg";
 
+
+
 const collections = [
   {
     title: "Bridal Elegance",
@@ -33,9 +35,8 @@ export default function CollectionsPage() {
     <>
       <CollectionHero />
 
-      <section className="pb-32">
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="pb-32 bg-background">
+        <div className="container-custom">
 
           <div className="grid md:grid-cols-2 gap-10">
 

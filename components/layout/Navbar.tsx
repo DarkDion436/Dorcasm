@@ -26,27 +26,29 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
-  // Close menu when route changes
-  useEffect(() => {
+  // Adjust state when route changes without using useEffect to avoid cascading renders
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setIsOpen(false);
-  }, [pathname]);
+  }
 
   return (
     <>
       {/* Navbar */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-[#faf8f4]/90 backdrop-blur-md border-b border-[#c5a059]/20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <header className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-gold/20">
+        <div className="container-custom">
           <div className="flex items-center justify-between h-20">
 
             {/* Logo */}
             <Link href="/" className="group">
-              <h1 className="font-serif text-3xl tracking-widest text-neutral-900 flex items-center">
-                K<span className="text-[#c5a059]">D</span>
+              <h1 className="font-serif text-3xl tracking-widest text-foreground flex items-center">
+                K<span className="text-gold">D</span>
               </h1>
 
-              <p className="font-serif text-[10px] tracking-[0.4em] uppercase text-neutral-500 -mt-1">
+              <p className="font-serif text-[10px] tracking-[0.4em] uppercase text-muted -mt-1">
                 KENDI DORCAS{" "}
-                <span className="text-[#c5a059]/70">STUDIO</span>
+                <span className="text-gold/70">STUDIO</span>
               </p>
             </Link>
 
@@ -56,19 +58,9 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`
-                    text-[10px]
-                    uppercase
-                    tracking-[0.35em]
-                    transition-colors
-                    duration-300
-                    hover:text-[#c5a059]
-                    ${
-                      pathname === link.href
-                        ? "text-[#c5a059]"
-                        : "text-neutral-500"
-                    }
-                  `}
+                  className={`text-[10px] uppercase tracking-[0.35em] transition-colors duration-300 hover:text-gold ${
+                    pathname === link.href ? "text-gold" : "text-muted"
+                  }`}
                 >
                   {link.name}
                 </Link>
@@ -79,25 +71,7 @@ export default function Navbar() {
             <div className="hidden lg:block">
               <Link
                 href="/custom-orders"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  min-w-[220px]
-                  px-10
-                  py-4
-                  bg-black
-                  text-white
-                  uppercase
-                  tracking-[0.25em]
-                  text-xs
-                  border
-                  border-black
-                  hover:bg-transparent
-                  hover:text-black
-                  transition-all
-                  duration-300
-                "
+                className="btn-primary min-w-[220px] px-10 mx-0"
               >
                 Book Consultation
               </Link>
@@ -107,64 +81,12 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle Menu"
-              className="
-                lg:hidden
-                relative
-                z-[70]
-                flex
-                items-center
-                justify-center
-                w-10
-                h-10
-              "
+              className="lg:hidden flex flex-col justify-center items-end gap-[6px] w-8 h-8 group focus:outline-none relative z-[70]"
+              data-state={isOpen ? "open" : "closed"}
             >
-              <span
-                className={`
-                  absolute
-                  h-[2px]
-                  w-6
-                  bg-black
-                  transition-all
-                  duration-300
-                  ${
-                    isOpen
-                      ? "rotate-45"
-                      : "-translate-y-2"
-                  }
-                `}
-              />
-
-              <span
-                className={`
-                  absolute
-                  h-[2px]
-                  w-6
-                  bg-black
-                  transition-all
-                  duration-300
-                  ${
-                    isOpen
-                      ? "opacity-0"
-                      : "opacity-100"
-                  }
-                `}
-              />
-
-              <span
-                className={`
-                  absolute
-                  h-[2px]
-                  w-6
-                  bg-black
-                  transition-all
-                  duration-300
-                  ${
-                    isOpen
-                      ? "-rotate-45"
-                      : "translate-y-2"
-                  }
-                `}
-              />
+              <span className="hamburger-line" />
+              <span className="hamburger-line w-4" />
+              <span className="hamburger-line" />
             </button>
 
           </div>
@@ -174,46 +96,14 @@ export default function Navbar() {
       {/* Overlay */}
       <div
         onClick={() => setIsOpen(false)}
-        className={`
-          fixed
-          inset-0
-          bg-black/40
-          backdrop-blur-sm
-          z-50
-          lg:hidden
-          transition-all
-          duration-300
-          ${
-            isOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
-          }
-        `}
+        className="menu-overlay"
+        data-state={isOpen ? "open" : "closed"}
       />
 
       {/* Mobile Drawer */}
       <aside
-        className={`
-          fixed
-          top-0
-          right-0
-          z-[60]
-          h-screen
-          w-full
-          sm:w-[420px]
-          bg-[#faf8f4]
-          border-l
-          border-[#c5a059]/20
-          overflow-y-auto
-          transition-transform
-          duration-500
-          ease-out
-          ${
-            isOpen
-              ? "translate-x-0"
-              : "translate-x-full"
-          }
-        `}
+        className="mobile-menu-drawer"
+        data-state={isOpen ? "open" : "closed"}
       >
         <div className="flex flex-col justify-between min-h-screen p-8 pt-28">
 
@@ -233,7 +123,7 @@ export default function Navbar() {
                     text-[10px]
                     uppercase
                     tracking-[0.4em]
-                    text-[#c5a059]
+                    text-gold
                     mb-2
                   "
                 >
@@ -241,18 +131,9 @@ export default function Navbar() {
                 </span>
 
                 <span
-                  className={`
-                    font-serif
-                    text-3xl
-                    sm:text-4xl
-                    transition-colors
-                    duration-300
-                    ${
-                      pathname === link.href
-                        ? "text-[#c5a059]"
-                        : "text-neutral-900"
-                    }
-                  `}
+                  className={`font-serif text-3xl sm:text-4xl transition-colors duration-300 ${
+                    pathname === link.href ? "text-gold" : "text-foreground"
+                  }`}
                 >
                   {link.name}
                 </span>
@@ -262,37 +143,22 @@ export default function Navbar() {
           </nav>
 
           {/* Bottom Area */}
-          <div className="pt-10 mt-10 border-t border-neutral-200">
+          <div className="pt-10 mt-10 border-t border-border">
 
             <Link
               href="/custom-orders"
               onClick={() => setIsOpen(false)}
-              className="
-                inline-flex
-                items-center
-                justify-center
-                w-full
-                px-8
-                py-4
-                bg-[#c5a059]
-                text-white
-                uppercase
-                tracking-[0.25em]
-                text-xs
-                hover:bg-black
-                transition-colors
-                duration-300
-              "
+              className="btn-primary w-full px-8 mx-0"
             >
               Book Consultation
             </Link>
 
             <div className="mt-8">
-              <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">
+              <p className="text-xs uppercase tracking-[0.3em] text-muted">
                 Kendi Dorcas Studio
               </p>
 
-              <p className="mt-2 text-sm text-neutral-400">
+              <p className="mt-2 text-sm text-muted/60">
                 Luxury Fashion Atelier
               </p>
             </div>
@@ -303,4 +169,5 @@ export default function Navbar() {
       </aside>
     </>
   );
+  
 }

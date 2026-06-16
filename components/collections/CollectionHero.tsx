@@ -3,8 +3,8 @@ import heroImage from "@/images/collections/hero.jpg";
 
 export default function CollectionHero() {
   return (
-    <section className="bg-[#faf8f4] pt-40 pb-24">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="bg-background pt-40 pb-24">
+      <div className="container-custom">
 
         <div className="mb-16">
 
@@ -13,7 +13,7 @@ export default function CollectionHero() {
               uppercase
               tracking-[0.45em]
               text-xs
-              text-neutral-500
+              text-muted
             "
           >
             Our Collections
@@ -63,7 +63,7 @@ export default function CollectionHero() {
               text-lg
               md:text-xl
               leading-relaxed
-              text-neutral-600
+              text-muted
             "
           >
             Discover collections crafted with purpose,

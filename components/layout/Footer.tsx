@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#fcfaf7] border-t border-neutral-200">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 md:py-12">
+    <footer className="bg-background border-t border-border">
+      <div className="container-custom py-10 md:py-12">
 
         {/* Top Footer */}
         <div className="grid gap-x-24 gap-y-20 md:grid-cols-2 lg:grid-cols-4">
@@ -11,15 +11,15 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="inline-block ">
-              <p className="font-serif text-3xl tracking-[0.15em] uppercase text-neutral-900">
-                KENDI <span className="text-[#c5a059]">DORCAS</span>
+              <p className="font-serif text-3xl tracking-[0.15em] uppercase text-foreground">
+                KENDI <span className="text-gold">DORCAS</span>
               </p>
-              <p className="font-serif text-[10px] tracking-[0.5em] uppercase text-[#c5a059] mt-2 border-t border-[#c5a059]/30 pt-2">
+              <p className="font-serif text-[10px] tracking-[0.5em] uppercase text-gold mt-2 border-t border-gold/30 pt-2">
                 STUDIO
               </p>
             </div>
 
-            <p className="mt-10 text-sm text-neutral-500 leading-relaxed max-w-xs font-light tracking-wide">
+            <p className="mt-10 text-sm text-muted leading-relaxed max-w-xs font-light tracking-wide">
               A luxury fashion and design studio creating timeless,
               sustainable, and bespoke garments for modern women.
             </p>
@@ -31,31 +31,31 @@ export default function Footer() {
               Navigation
             </h3>
 
-            <ul className="footer-links-gap text-sm text-neutral-500 grid gap-y-2 font-light">
+            <ul className="footer-links-gap text-sm text-muted grid gap-y-2 font-light">
               <li>
-                <Link href="/" className="hover:text-[#c5a059] footer-interactive">Home</Link>
+                <Link href="/" className="hover:text-gold footer-interactive">Home</Link>
               </li>
 
               <li>
-                <Link href="/about" className="hover:text-[#c5a059] footer-interactive">About</Link>
+                <Link href="/about" className="hover:text-gold footer-interactive">About</Link>
               </li>
 
               <li>
-                <Link href="/collections" className="hover:text-[#c5a059] footer-interactive">Collections</Link>
+                <Link href="/collections" className="hover:text-gold footer-interactive">Collections</Link>
               </li>
 
               <li>
-                <Link href="/portfolio" className="hover:text-[#c5a059] footer-interactive">Portfolio</Link>
+                <Link href="/portfolio" className="hover:text-gold footer-interactive">Portfolio</Link>
               </li>
 
               <li>
-                <Link href="/custom-orders" className="hover:text-[#c5a059] footer-interactive">
+                <Link href="/custom-orders" className="hover:text-gold footer-interactive">
                   Custom Orders
                 </Link>
               </li>
 
               <li>
-                <Link href="/contact" className="hover:text-[#c5a059] footer-interactive">Contact</Link>
+                <Link href="/contact" className="hover:text-gold footer-interactive">Contact</Link>
               </li>
             </ul>
           </div>
@@ -66,7 +66,7 @@ export default function Footer() {
               Services
             </h3>
 
-            <ul className="footer-links-gap text-sm text-neutral-500 font-light grid gap-y-2">
+            <ul className="footer-links-gap text-sm text-muted font-light grid gap-y-2">
               <li>Custom Tailoring</li>
               <li>Bridal Wear</li>
               <li>Resort Wear</li>
@@ -81,7 +81,7 @@ export default function Footer() {
               Contact
             </h3>
 
-            <div className="footer-links-gap text-sm text-neutral-500 font-light">
+            <div className="footer-links-gap text-sm text-muted font-light">
               <p>Nairobi, Kenya</p>
 
               <p>+254 700 000 000</p>
@@ -93,21 +93,21 @@ export default function Footer() {
 
               <Link
                 href="#"
-                className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 hover:text-[#c5a059] footer-interactive"
+                className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 hover:text-gold footer-interactive"
               >
                 Instagram
               </Link>
 
               <Link
                 href="#"
-                className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 hover:text-[#c5a059] footer-interactive"
+                className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 hover:text-gold footer-interactive"
               >
                 Pinterest
               </Link>
 
               <Link
                 href="#"
-                className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 hover:text-[#c5a059] footer-interactive"
+                className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 hover:text-gold footer-interactive"
               >
                 Facebook
               </Link>
@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-neutral-200 mt-8 pt-8">
+        <div className="border-t border-border mt-8 pt-8">
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
 
@@ -127,11 +127,11 @@ export default function Footer() {
             </p>
 
             <div className="flex gap-12 text-[10px] uppercase tracking-[0.25em] text-neutral-400">
-              <Link href="#" className="hover:text-[#c5a059] footer-interactive">
+              <Link href="#" className="hover:text-gold footer-interactive">
                 Privacy Policy
               </Link>
 
-              <Link href="#" className="hover:text-[#c5a059] footer-interactive">
+              <Link href="#" className="hover:text-gold footer-interactive">
                 Terms of Service
               </Link>
             </div>
