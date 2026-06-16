@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+
+
 interface CollectionCardProps {
   title: string;
   category: string;

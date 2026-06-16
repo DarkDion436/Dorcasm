@@ -1,26 +1,30 @@
 import CollectionHero from "@/components/collections/CollectionHero";
 import CollectionCard from "@/components/collections/CollectionCard";
+import bridalImage from "@/images/collections/bridal.jpg";
+import resortImage from "@/images/collections/resort.jpg";
+import corporateImage from "@/images/collections/corporate.jpg";
+import tailoringImage from "@/images/collections/tailoring1.jpg";
 
 const collections = [
   {
     title: "Bridal Elegance",
     category: "Bridal",
-    image: "/images/collections/bridal.jpg",
+    image: bridalImage,
   },
   {
     title: "Resort Wear",
     category: "Vacation",
-    image: "/images/collections/resort.jpg",
+    image: resortImage,
   },
   {
     title: "Corporate Luxury",
     category: "Corporate",
-    image: "/images/collections/corporate.jpg",
+    image: corporateImage,
   },
   {
     title: "Custom Tailoring",
     category: "Bespoke",
-    image: "/images/collections/tailoring.jpg",
+    image: tailoringImage,
   },
 ];
 

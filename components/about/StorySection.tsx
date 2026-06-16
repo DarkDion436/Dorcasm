@@ -1,4 +1,5 @@
 import Image from "next/image";
+import founder from "@/images/about/founder.jpg";
 
 export default function StorySection() {
   return (
@@ -13,7 +14,7 @@ export default function StorySection() {
             <div className="relative h-[700px]">
 
               <Image
-                src="/images/about/founder.jpg"
+                src={founder}
                 alt="Founder"
                 fill
                 className="object-cover"

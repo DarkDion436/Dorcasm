@@ -1,4 +1,5 @@
 import Image from "next/image";
+import heroImage from "@/images/collections/hero.jpg";
 
 export default function CollectionHero() {
   return (
@@ -42,7 +43,7 @@ export default function CollectionHero() {
         <div className="relative overflow-hidden h-[500px] lg:h-[750px]">
 
           <Image
-            src="/images/collections/hero.jpg"
+            src={heroImage}
             alt="Collections"
             fill
             priority

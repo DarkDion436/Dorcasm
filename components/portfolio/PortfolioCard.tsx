@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface PortfolioCardProps {
   title: string;
   category: string;
-  image: string;
+  image: string | StaticImageData;
 }
 
 export default function PortfolioCard({
@@ -24,6 +24,7 @@ export default function PortfolioCard({
             src={image}
             alt={title}
             fill
+          placeholder={typeof image !== "string" ? "blur" : undefined}
             className="
               object-cover
               transition-transform

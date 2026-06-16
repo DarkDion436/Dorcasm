@@ -4,48 +4,54 @@ import { useState } from "react";
 
 import PortfolioCard from "./PortfolioCard";
 import CategoryFilter from "./CategoryFilter";
+import bridalImage1 from "@/images/portfolio/bridalImage2.jpg";
+import resortImage1 from "@/images/portfolio/resort.jpg";
+import corporateImage1 from "@/images/portfolio/corporate.jpg";
+import bespokeImage1 from "@/images/portfolio/bespokeImage1.jpg";
+import eveningImage1 from "@/images/portfolio/eveningImage1.jpg";
+import bridalImage2 from "@/images/portfolio/bridal.jpg";
 
 const portfolioItems = [
   {
     id: 1,
     title: "Modern Bridal Elegance",
     category: "Bridal",
-    image: "/images/portfolio/bridal-1.jpg",
+    image: bridalImage1,
   },
 
   {
     id: 2,
     title: "Resort Collection",
     category: "Resort",
-    image: "/images/portfolio/resort-1.jpg",
+    image: resortImage1,
   },
 
   {
     id: 3,
     title: "Executive Sophistication",
     category: "Corporate",
-    image: "/images/portfolio/corporate-1.jpg",
+    image: corporateImage1,
   },
 
   {
     id: 4,
     title: "Bespoke Tailoring",
     category: "Bespoke",
-    image: "/images/portfolio/bespoke-1.jpg",
+    image: bespokeImage1,
   },
 
   {
     id: 5,
     title: "Luxury Evening Wear",
     category: "Evening",
-    image: "/images/portfolio/evening-1.jpg",
+    image: eveningImage1,
   },
 
   {
     id: 6,
     title: "Contemporary Bridal",
     category: "Bridal",
-    image: "/images/portfolio/bridal-2.jpg",
+    image: bridalImage2,
   },
 ];
 
